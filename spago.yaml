@@ -1,0 +1,15 @@
+package:
+  name: forth-compiler
+  dependencies:
+    - console
+    - effect
+    - prelude
+  test:
+    main: Test.Main
+    dependencies: 
+      - spec
+      - spec-node
+workspace:
+  packageSet:
+    registry: 63.5.0
+  extraPackages: {}
