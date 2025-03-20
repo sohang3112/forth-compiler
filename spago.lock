@@ -5,14 +5,81 @@
         "path": "./",
         "core": {
           "dependencies": [
+            "argonaut",
             "console",
             "effect",
-            "prelude"
+            "node-child-process",
+            "parsing",
+            "prelude",
+            "transformers"
           ],
           "build_plan": [
+            "aff",
+            "argonaut",
+            "argonaut-codecs",
+            "argonaut-core",
+            "argonaut-traversals",
+            "arraybuffer-types",
+            "arrays",
+            "bifunctors",
             "console",
+            "const",
+            "contravariant",
+            "control",
+            "datetime",
+            "distributive",
             "effect",
-            "prelude"
+            "either",
+            "enums",
+            "exceptions",
+            "exists",
+            "foldable-traversable",
+            "foreign",
+            "foreign-object",
+            "functions",
+            "functors",
+            "gen",
+            "identity",
+            "integers",
+            "invariant",
+            "js-date",
+            "lazy",
+            "lists",
+            "maybe",
+            "newtype",
+            "node-buffer",
+            "node-child-process",
+            "node-event-emitter",
+            "node-fs",
+            "node-os",
+            "node-path",
+            "node-streams",
+            "nonempty",
+            "now",
+            "nullable",
+            "numbers",
+            "ordered-collections",
+            "orders",
+            "parallel",
+            "parsing",
+            "partial",
+            "posix-types",
+            "prelude",
+            "profunctor",
+            "profunctor-lenses",
+            "record",
+            "refs",
+            "safe-coerce",
+            "st",
+            "strings",
+            "tailrec",
+            "transformers",
+            "tuples",
+            "type-equality",
+            "typelevel-prelude",
+            "unfoldable",
+            "unicode",
+            "unsafe-coerce"
           ]
         },
         "test": {
@@ -661,6 +728,16 @@
         "strings"
       ]
     },
+    "argonaut": {
+      "type": "registry",
+      "version": "9.0.0",
+      "integrity": "sha256-9sHzkzcFkaMUa9+3FjIybJDYnHtY4Jp4zHOJ84qPTXo=",
+      "dependencies": [
+        "argonaut-codecs",
+        "argonaut-core",
+        "argonaut-traversals"
+      ]
+    },
     "argonaut-codecs": {
       "type": "registry",
       "version": "9.1.0",
@@ -695,6 +772,16 @@
         "prelude",
         "strings",
         "tailrec"
+      ]
+    },
+    "argonaut-traversals": {
+      "type": "registry",
+      "version": "10.0.0",
+      "integrity": "sha256-9nSfqR70rjiNWVVsCoK+jrm9dmyZTx89IKNYO6uNUIk=",
+      "dependencies": [
+        "argonaut-codecs",
+        "argonaut-core",
+        "profunctor-lenses"
       ]
     },
     "arraybuffer-types": {
@@ -1144,6 +1231,24 @@
         "unsafe-coerce"
       ]
     },
+    "node-child-process": {
+      "type": "registry",
+      "version": "11.1.0",
+      "integrity": "sha256-vioMNgk8p+CGwlb6T3I3TIir27el85Yg4satLE/I89w=",
+      "dependencies": [
+        "exceptions",
+        "foreign",
+        "foreign-object",
+        "functions",
+        "node-event-emitter",
+        "node-fs",
+        "node-os",
+        "node-streams",
+        "nullable",
+        "posix-types",
+        "unsafe-coerce"
+      ]
+    },
     "node-event-emitter": {
       "type": "registry",
       "version": "3.0.0",
@@ -1179,6 +1284,32 @@
         "partial",
         "prelude",
         "strings",
+        "unsafe-coerce"
+      ]
+    },
+    "node-os": {
+      "type": "registry",
+      "version": "5.1.0",
+      "integrity": "sha256-K3gcu9AXanN1+qtk1900+Fi+CuO0s3/H/RMNRNgIzso=",
+      "dependencies": [
+        "arrays",
+        "bifunctors",
+        "console",
+        "control",
+        "datetime",
+        "effect",
+        "either",
+        "exceptions",
+        "foldable-traversable",
+        "foreign",
+        "foreign-object",
+        "functions",
+        "maybe",
+        "node-buffer",
+        "nullable",
+        "partial",
+        "posix-types",
+        "prelude",
         "unsafe-coerce"
       ]
     },
@@ -1366,6 +1497,38 @@
         "transformers"
       ]
     },
+    "parsing": {
+      "type": "registry",
+      "version": "10.3.0",
+      "integrity": "sha256-ykIVIZcsyRcMxui1ZH+4GLzoVTstv6BRVZyz55+2TvI=",
+      "dependencies": [
+        "arrays",
+        "control",
+        "effect",
+        "either",
+        "enums",
+        "foldable-traversable",
+        "functions",
+        "identity",
+        "integers",
+        "lazy",
+        "lists",
+        "maybe",
+        "newtype",
+        "nullable",
+        "numbers",
+        "partial",
+        "prelude",
+        "st",
+        "strings",
+        "tailrec",
+        "transformers",
+        "tuples",
+        "unfoldable",
+        "unicode",
+        "unsafe-coerce"
+      ]
+    },
     "partial": {
       "type": "registry",
       "version": "4.0.0",
@@ -1413,6 +1576,33 @@
         "invariant",
         "newtype",
         "prelude",
+        "tuples"
+      ]
+    },
+    "profunctor-lenses": {
+      "type": "registry",
+      "version": "8.0.0",
+      "integrity": "sha256-K7f29rHRHgVSb2Y/PaSKtfYPriP6n87BJNO7EhsZHas=",
+      "dependencies": [
+        "arrays",
+        "bifunctors",
+        "const",
+        "control",
+        "distributive",
+        "either",
+        "foldable-traversable",
+        "foreign-object",
+        "functors",
+        "identity",
+        "lists",
+        "maybe",
+        "newtype",
+        "ordered-collections",
+        "partial",
+        "prelude",
+        "profunctor",
+        "record",
+        "transformers",
         "tuples"
       ]
     },
@@ -1615,6 +1805,16 @@
         "partial",
         "prelude",
         "tuples"
+      ]
+    },
+    "unicode": {
+      "type": "registry",
+      "version": "6.0.0",
+      "integrity": "sha256-QJnTVZpmihEAUiMeYrfkusVoziJWp2hJsgi9bMQLue8=",
+      "dependencies": [
+        "foldable-traversable",
+        "maybe",
+        "strings"
       ]
     },
     "unsafe-coerce": {

@@ -9,6 +9,8 @@ import Test.Spec.Assertions (shouldEqual)
 import Test.Spec.Reporter (consoleReporter)
 import Test.Spec.Runner.Node (runSpecAndExitProcess)
 
+import Compiler (IR, compile)
+
 main :: Effect Unit
 main = runSpecAndExitProcess [consoleReporter] spec
 

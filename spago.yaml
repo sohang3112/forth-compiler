@@ -1,9 +1,15 @@
 package:
   name: forth-compiler
   dependencies:
-    - console
-    - effect
     - prelude
+    - effect
+    - console
+    - parsing
+    - argonaut       # JSON lib
+    - node-child-process
+    - transformers
+    # - pathy
+    # - printf
   test:
     main: Test.Main
     dependencies: 

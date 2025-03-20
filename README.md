@@ -1,6 +1,9 @@
 # Forth Compiler
 
-Implemented in PureScript. Compiles Forth to JavaScript and then runs it.
+Implemented in PureScript. Compiles Forth to Web Assembly and then runs it.
+
+**Reason for Web Assembly**: WASM is stack-based, it enforces that function stack is empty at the end of function. 
+So we can use this builtin stack as Forth's *return stack*, and a seperate global variable list as *data stack*.
 
 Tested on:
 
@@ -37,6 +40,7 @@ $ spago run     # or `spago test` or `spago build`
 
 - [r/purescript](https://www.reddit.com/r/purescript/)
 
-### Spago (PureScript package manager) Resources
+### Packages
 
-- [`spago@next`](https://github.com/purescript/spago): latest Spago version.
+- [`spago@next` package manager](https://github.com/purescript/spago): latest version
+- [Pursuit package docs](https://pursuit.purescript.org/)
