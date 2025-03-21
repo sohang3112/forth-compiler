@@ -1,16 +1,11 @@
-use std::str;
+use std::str::{self, FromStr};
 use std::io::{self, BufRead, Write};
 
-struct Forth(());
+mod parser;
+use parser::AST;
 
-impl Forth {
-    fn parse(source_code: &str) -> Result<Forth, ()> {
-        println!("Forth source code: {}", source_code);
-        Ok(Forth(()))
-    }
-
-    fn run<R: BufRead, W: Write, E: Write>(self: Self, mut stdin: R, mut stdout: W, mut stderr: E) -> io::Result<()> {
-        writeln!(stderr, "Testing stderr..")?;
+impl AST {
+    fn run<R: BufRead, W: Write, E: Write>(self: Self, mut stdin: R, mut stdout: W, mut _stderr: E) -> io::Result<()> {
         let mut line = String::new();
         stdin.read_line(&mut line)?;
         write!(stdout, "{}", line)?;
@@ -19,8 +14,8 @@ impl Forth {
 }
 
 fn main() -> io::Result<()> {
-    let source_code = "1";
-    let forth = Forth::parse(source_code).expect("Parsing Forth source code failed due to Syntax Error");
+    let code = "1";
+    let forth: AST = source_code.parse().expect("Parsing Forth source code failed due to Syntax Error");
     forth.run(io::stdin().lock(), io::stdout(), io::stderr())
 }
 
@@ -33,12 +28,13 @@ mod tests {
         let stdin = io::Cursor::new("1");
         let mut stdout = Vec::new();
         let mut stderr = Vec::new();
-        let source_code = "1";
-        let forth = Forth::parse(source_code).expect("Parsing Forth source code failed due to Syntax Error");
+        let code = "1";
+        let forth: AST = source_code.parse().expect("Parsing Forth source code failed due to Syntax Error");
         forth.run(stdin, &mut stdout, &mut stderr)?;
         let stdout = str::from_utf8(&stdout).expect("UTF8 Error while converting stdout to string in test");
         let stderr = str::from_utf8(&stderr).expect("UTF8 Error while converting stderr to string in test");
         assert_eq!(stdout, "1");
+        assert_eq!(stderr, "");
         Ok(())
     }
 }
