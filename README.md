@@ -23,3 +23,6 @@ graph TD;
     optimized_ir --> optimized_ir;
     optimized_ir -- eval --> repl[Read Eval Print Loop];
 ```
+
+## Resources
+- https://rustwasm.github.io/docs/wasm-pack/
